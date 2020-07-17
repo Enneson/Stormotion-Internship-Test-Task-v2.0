@@ -1,0 +1,103 @@
+body {
+    background-image: linear-gradient(#8b9da9, #fff6e4);
+    box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 80vw;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side {
+    position: relative;
+}
+
+.middle {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.matches {
+    width: 100px;
+    height: 100px;
+}
+
+.countContainer {
+    position: absolute;
+    bottom: 0;
+    right: -70px;
+}
+
+.middle > .countContainer {
+    right: -100px;
+}
+
+.player > .countContainer {
+    right: -50px;
+}
+
+.computerCounter::before, .totalCounter::before, .playerCounter::before {
+    content: 'x';
+}
+
+.computerCounter, .totalCounter, .playerCounter {
+    display: inline;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.match {
+    
+    width: 30px;
+    height: 30px;
+}
+
+img {
+    width: 160px;
+    height: 160px;
+}
+
+
+
+.buttons {
+    margin-top: 50px;
+    position: relative;
+}
+
+.buttons::before {
+    content: 'Сколько спичек взять?';
+    position: absolute;
+    left: -110px;
+    top: -200px;
+    max-width: 100px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.466);
+    border-radius: 40%;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.buttons:hover::after {
+    content: 'Можно выбирать как мышкой, так и клавиатурой';
+    display: inline-block;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.911);
+    padding: 10px 10px;
+    opacity: 0;
+    animation: hide 4s cubic-bezier(.5, 0, 0, .5);
+}
+
+@keyframes hide{
+    0%{ opacity : 0 }
+    50%{ opacity : 1 }
+    100% {opacity: 0}
+}

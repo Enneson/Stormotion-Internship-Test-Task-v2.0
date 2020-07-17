@@ -1,0 +1,58 @@
+#popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; top: 0; left: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    background: rgba(240,240,240,.9);
+    visibility: hidden;
+    animation: animation 1s .5s forwards;
+    cursor: pointer;
+  }
+  
+  @keyframes animation {   
+    from {visibility: hidden;}  
+    to {visibility: visible;} 
+  }
+  
+  #popupWindow p, #popupWindow h1, #popupWindow:before {
+    max-width: 700px;
+    margin: 0 auto;
+    border-style: solid; 
+    border-color: rgba(214, 214, 214, 0.774);
+    background: #fff;
+    font-size: 20px;
+  }
+
+  #popupWindow::before { 
+    content: 'любая клавиша или клик закроют окно';
+    font-size: 18px;
+    display: block;
+    padding: 0 1%;
+    border-width: 4px 4px 0 4px;
+    border-radius: 5px 5px 0 0;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.596);
+  }
+  #popupWindow p, #popupWindow h1 {
+    padding: 4%;
+    cursor: default;
+  }
+  #popupWindow h1 {
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+
+    border-width: 0 4px 0 4px;
+    font-size: 150%;
+    color: rgb(100,100,100);
+  }
+  
+  #popupWindow p {
+    border-width: 0 4px 4px 4px;
+    border-radius: 0 0 5px 5px;
+    display: block;
+  }
