@@ -116,16 +116,24 @@ function checkEndGame() {
 }
 
 function endGame() {
+	
+	if (playerCounter % 2 == 0) {
+		
+		showResultPopup('win');
 
-    if (playerCounter % 2 == 0) {
-        alert(`Победа игрока!`);
-     } else if (computerCounter % 2 == 0) {
-        alert('Победа компьютера!');
-     } else if (playerCounter % 2 == 0 && computerCounter % 2 == 0) {
-        alert('Ничья!');
-     } else if (playerCounter % 2 != 0 && computerCounter % 2 != 0) {
-        alert('Ничья!');
-     };
+  } else if (computerCounter % 2 == 0) {
+		
+		showResultPopup('defeat');
+
+  } else if (playerCounter % 2 == 0 && computerCounter % 2 == 0) {
+				
+		showResultPopup('draw');
+
+  } else if (playerCounter % 2 != 0 && computerCounter % 2 != 0) {
+				
+		showResultPopup('draw');
+
+  };
 
     isEnded = true;
 }
