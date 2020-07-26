@@ -10,10 +10,10 @@ let isEnded = false;
 
 
 computerCounter = computerPrimary;
-totalCounter = totalPrimary;
+// totalCounter = totalPrimary;
 playerCounter = playerPrimary;
 document.querySelector('.computerCounter').innerHTML = computerPrimary;
-document.querySelector('.totalCounter').innerHTML = totalPrimary;
+// document.querySelector('.totalCounter').innerHTML = totalPrimary;
 document.querySelector('.playerCounter').innerHTML = playerPrimary;
 
 

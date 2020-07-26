@@ -11,6 +11,6 @@ function closeGreetingPopup(event) {
   localStorage.setItem('greetingPopup', 'none');
 }
 
-if(localStorage.getItem('greetingPopup')) {
-  greetingPopup.style.display='none';
-};
+// if(localStorage.getItem('greetingPopup')) {
+//   greetingPopup.style.display='none';
+// };

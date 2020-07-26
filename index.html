@@ -6,6 +6,7 @@
     <script defer src="./js/greetingPopup.js"></script>
     <link rel="stylesheet" href="./css/greetingPopup.css">
     
+    <script defer src="./js/optionsPopup.js"></script>
     <link rel="stylesheet" href="./css/optionsPopup.css">
 
     <link rel="stylesheet" href="./css/normalize.css">
@@ -63,7 +64,7 @@
   <div class="optionsPopupWrapper">
     <div class="optionsPopup">
       <h1 class="optionsTitle">Options</h1>
-      <form action="" name="options" class="optionsForm">
+      <form name="options" class="optionsForm">
         
         <section class="optionsSection">
           <label for="firstTurn" class="legend"> Player first: </label>
@@ -71,7 +72,7 @@
         </section>
       
         <section class="optionsSection">
-          <input value="25" class="optionsInput" type="text" name="name" autocomplete="off" required>
+          <input value="25" class="optionsInput" type="text" name="amount" autocomplete="off" required>
           <label for="name" class="optionsInputLabel">Amount</label>
           <span class="optionsInputDescription">
             Total number of matches
@@ -79,16 +80,16 @@
         </section>
         
         <section class="optionsSection">
-          <input value="3" class="optionsInput" type="text" name="name" autocomplete="off" required>
-          <label for="name" class="optionsInputLabel">You can take</label>
+          <input value="3" class="optionsInput" type="text" name="canTake" autocomplete="off" required>
+          <label for="name" class="optionsInputLabel">Max can take</label>
           <span class="optionsInputDescription">
             Maximum number of matches per turn
           </span>
         </section>
 
         <section class="optionsButtons">
-          <button class="optionsButton">Default</button>
-          <button class="optionsButton" type="submit">Done</button>
+          <button class="optionsButton default">Default</button>
+          <button class="optionsButton submit">Done</button>
         </section>
       </form>
     </div>
