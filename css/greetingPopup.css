@@ -1,4 +1,4 @@
-.greetingPopup {
+.greeting-popup__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
     to {visibility: visible;} 
   }
   
-  .greetingPopupWindow p, .greetingPopupWindow h1, .greetingPopupWindow:before {
+  .greeting-popup__window p, .greeting-popup__window h1, .greeting-popup__window:before {
     max-width: 700px;
     margin: 0 auto;
     border-style: solid; 
@@ -26,7 +26,7 @@
     font-size: 20px;
   }
 
-  .greetingPopupWindow::before { 
+  .greeting-popup__window::before { 
     content: 'любая клавиша или клик закроют окно';
     font-size: 18px;
     display: block;
@@ -36,11 +36,11 @@
     text-align: right;
     color: rgba(0, 0, 0, 0.596);
   }
-  .greetingPopupWindow p, .greetingPopupWindow h1 {
+  .greeting-popup__window p, .greeting-popup__window h1 {
     padding: 4%;
     cursor: default;
   }
-  .greetingPopupWindow h1 {
+  .greeting-popup__window h1 {
     position: relative;
     
     display: flex;
@@ -51,7 +51,7 @@
     color: rgb(100,100,100);
   }
   
-  .greetingPopupWindow p {
+  .greeting-popup__window p {
     border-width: 0 4px 4px 4px;
     border-radius: 0 0 5px 5px;
     display: block;

@@ -10,37 +10,9 @@ let isEnded = false;
 
 
 computerCounter = computerPrimary;
-// totalCounter = totalPrimary;
 playerCounter = playerPrimary;
-document.querySelector('.computerCounter').innerHTML = computerPrimary;
-// document.querySelector('.totalCounter').innerHTML = totalPrimary;
-document.querySelector('.playerCounter').innerHTML = playerPrimary;
-
-
-// document.querySelector('.one').addEventListener('click',
-//     function() {playerTakeMatch( 1 )}
-// );
-// document.querySelector('.two').addEventListener('click',
-//     function() {playerTakeMatch( 2 )}
-// );
-// document.querySelector('.three').addEventListener('click',
-//     function() {playerTakeMatch( 3 )}
-// );
-
-// document.body.addEventListener('keyup', function(event) {
-//     switch(event.code) {
-//       case 'Digit1': 
-//         playerTakeMatch(1);
-//         break;
-//       case 'Digit2':
-//         playerTakeMatch(2);
-//         break;
-//       case 'Digit3':
-//         playerTakeMatch(3);
-//         break;
-//     }
-// });
-
+document.querySelector('.count-container__counter_computer-counter').innerHTML = computerPrimary;
+document.querySelector('.count-container__counter_player-counter').innerHTML = playerPrimary;
 
 function playerTakeMatch( playerValue ) {
     if( playerValue > totalCounter) {return};
@@ -54,8 +26,8 @@ function playerTakeMatch( playerValue ) {
 
     checkEndGame();
 
-    document.querySelector('.totalCounter').innerHTML = totalCounter;
-    document.querySelector('.playerCounter').innerHTML = playerCounter;
+    document.querySelector('.count-container__counter_total-counter').innerHTML = totalCounter;
+    document.querySelector('.count-container__counter_player-counter').innerHTML = playerCounter;
 }
 
 function computerTakeMatch() {
@@ -108,8 +80,8 @@ function computerTakeMatch() {
     computerCounter = computerCounter + computerValue;
     totalCounter = totalCounter - computerValue;
 
-    document.querySelector('.totalCounter').innerHTML = totalCounter;
-    document.querySelector('.computerCounter').innerHTML = computerCounter;
+    document.querySelector('.count-container__counter_total-counter').innerHTML = totalCounter;
+    document.querySelector('.count-container__counter_computer-counter').innerHTML = computerCounter;
 };
 
 function checkEndGame() {

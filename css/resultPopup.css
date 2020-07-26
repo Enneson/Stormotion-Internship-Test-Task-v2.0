@@ -1,4 +1,4 @@
-.resultPopupContainer {
+.result-popup__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
     to {visibility: visible;} 
   }
 
-  .resultPopup {
+  .result-popup {
     width: 400px;
     height: 100px;
     padding: 2%;
@@ -35,7 +35,7 @@
     position: relative;
   }
 
-  .resultPopup::before { 
+  .result-popup::before { 
     content: 'Esc или клик закроют окно';
     position: absolute;
     top: 0;

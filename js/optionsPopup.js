@@ -1,12 +1,12 @@
 
 
-let options = document.querySelector('.optionsPopupWrapper');
-let defaultButton = document.querySelector('button.optionsButton.default');
-let submitButton = document.querySelector('button.optionsButton.submit');
+let options = document.querySelector('.options__wrapper');
+let defaultButton = document.querySelector('.options__section_button-default');
+let submitButton = document.querySelector('.options__section_button-submit');
 
-let canTake = document.querySelector('.optionsInput[name="canTake"]'); 
+let canTake = document.querySelector('.options__input[name="canTake"]'); 
 canTake.oninput = function() {
-  document.querySelector('span.canTakeAmountResult').innerHTML = (2 * (+canTake.value) + 1);
+  document.querySelector('.options__can-take-amount_result').innerHTML = (2 * (+canTake.value) + 1);
 }
 
 
@@ -17,7 +17,7 @@ function defaultStart(event) {
   event.preventDefault();
 
   totalCounter = totalPrimary;
-  document.querySelector('.totalCounter').innerHTML = totalPrimary;
+  document.querySelector('.count-container__counter_total-counter').innerHTML = totalPrimary;
   max = 3;
 
   createButtons();
@@ -27,13 +27,13 @@ function defaultStart(event) {
 function modifiedStart(event) {
   event.preventDefault();
 
-  let amount = document.querySelector('.optionsInput[name="amount"]');
+  let amount = document.querySelector('.options__input[name="amount"]');
   totalCounter = +amount.value;
-  document.querySelector('.totalCounter').innerHTML = +amount.value;
+  document.querySelector('.count-container__counter_total-counter').innerHTML = +amount.value;
 
   max = (2 * (+canTake.value) + 1);
 
-  let firstTurn = document.querySelector('input.optionsCheckbox');
+  let firstTurn = document.querySelector('.options__checkbox');
   if (!firstTurn.checked) {
     computerTakeMatch();
   }
@@ -45,7 +45,7 @@ function modifiedStart(event) {
 function createButtons() {
   for(let i = 1; i <= max; i++) {
     let button = document.createElement('button');
-    button.className = 'btn';
+    button.className = 'match-game__button';
     button.innerHTML = i;
 
     button.onclick = function(event) {
@@ -54,13 +54,13 @@ function createButtons() {
     }
 
     let img = document.createElement('img');
-    img.className = 'btn match';
+    img.className = 'match__logo';
     img.setAttribute('src', './images/match.svg');
     img.setAttribute('alt', 'match');
 
     button.appendChild(img);
 
-    let container = document.querySelector('section.buttons');
+    let container = document.querySelector('.options__section_buttons');
     container.append(button);
   }
 }

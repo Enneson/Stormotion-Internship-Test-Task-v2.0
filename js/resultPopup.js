@@ -1,7 +1,7 @@
 let resultPopupContainer = document.createElement('div');
-resultPopupContainer.className = 'resultPopupContainer';
+resultPopupContainer.className = 'result-popup__wrapper';
 let resultPopup = document.createElement('div');
-resultPopup.className = 'resultPopup';
+resultPopup.className = 'result-popup';
 resultPopupContainer.append(resultPopup);
 document.body.append(resultPopupContainer);
 resultPopupContainer.style.display = 'none';
