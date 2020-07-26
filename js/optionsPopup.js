@@ -18,7 +18,9 @@ function defaultStart(event) {
 
   totalCounter = totalPrimary;
   document.querySelector('.totalCounter').innerHTML = totalPrimary;
+  max = 3;
 
+  createButtons();
   options.style.display = 'none';
 }
 
@@ -31,6 +33,16 @@ function modifiedStart(event) {
 
   max = (2 * (+canTake.value) + 1);
 
+  let firstTurn = document.querySelector('input.optionsCheckbox');
+  if (!firstTurn.checked) {
+    computerTakeMatch();
+  }
+  
+  createButtons();
+  options.style.display = 'none';
+}
+
+function createButtons() {
   for(let i = 1; i <= max; i++) {
     let button = document.createElement('button');
     button.className = 'btn';
@@ -51,12 +63,4 @@ function modifiedStart(event) {
     let container = document.querySelector('section.buttons');
     container.append(button);
   }
-
-  let firstTurn = document.querySelector('input.optionsCheckbox');
-  if (!firstTurn.checked) {
-    computerTakeMatch();
-  }
-  
-  
-  options.style.display = 'none';
 }
