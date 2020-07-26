@@ -14,5 +14,3 @@ function closeGreetingPopup(event) {
 if(localStorage.getItem('greetingPopup')) {
   greetingPopup.style.display='none';
 };
-
-

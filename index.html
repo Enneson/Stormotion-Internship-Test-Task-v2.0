@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+   
     <script defer src="./js/greetingPopup.js"></script>
     <link rel="stylesheet" href="./css/greetingPopup.css">
     
+    <link rel="stylesheet" href="./css/optionsPopup.css">
+
     <link rel="stylesheet" href="./css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 
     <script defer src="./js/main.js"></script>
@@ -56,6 +59,40 @@
 		</section>
 		
 	</div>
+
+  <div class="optionsPopupWrapper">
+    <div class="optionsPopup">
+      <h1 class="optionsTitle">Options</h1>
+      <form action="" name="options" class="optionsForm">
+        
+        <section class="optionsSection">
+          <label for="firstTurn" class="legend"> Player first: </label>
+          <input name="firstTurn" type="checkbox" class="optionsCheckbox" checked>
+        </section>
+      
+        <section class="optionsSection">
+          <input value="25" class="optionsInput" type="text" name="name" autocomplete="off" required>
+          <label for="name" class="optionsInputLabel">Amount</label>
+          <span class="optionsInputDescription">
+            Total number of matches
+          </span>
+        </section>
+        
+        <section class="optionsSection">
+          <input value="3" class="optionsInput" type="text" name="name" autocomplete="off" required>
+          <label for="name" class="optionsInputLabel">You can take</label>
+          <span class="optionsInputDescription">
+            Maximum number of matches per turn
+          </span>
+        </section>
+
+        <section class="optionsButtons">
+          <button class="optionsButton">Default</button>
+          <button class="optionsButton" type="submit">Done</button>
+        </section>
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>
