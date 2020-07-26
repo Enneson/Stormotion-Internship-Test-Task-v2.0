@@ -2,54 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+   
+    <script defer src="./js/greetingPopup.js"></script>
+    <link rel="stylesheet" href="./css/greetingPopup.css">
     
-    <script defer src="./js/popup.js"></script>
-    <link rel="stylesheet" href="./css/popup.css">
-    
+    <script defer src="./js/optionsPopup.js"></script>
+    <link rel="stylesheet" href="./css/optionsPopup.css">
+
     <link rel="stylesheet" href="./css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 
     <script defer src="./js/main.js"></script>
 
-    <title>Document</title>
+		<script defer src="./js/resultPopup.js"></script>
+    <link rel="stylesheet" href="./css/resultPopup.css">
+    
+    <title>Stormotion internship test task v2</title>
 </head>
 <body>
-    <div class="wrapper">
-        <section class="computer side">
+	
+	<div class="wrapper">
+		
+		<section class="computer side">
              
-            <img src="./images/pc.svg" alt="computer" class="profile logo">    
-            <div class="countContainer">
-                <img src="./images/match.svg" alt="match" class="match">
-                <p class="computerCounter">0</p>
-            </div>
+      <img src="./images/pc.svg" alt="computer" class="profile logo">    
+      <div class="countContainer">
+        <img src="./images/match.svg" alt="match" class="match">
+        <p class="computerCounter">0</p>
+      </div>
         
-        </section>
-        <section class="middle side">
+    </section>
+    <section class="middle side">
     
-            <img src="./images/matches.svg" alt="totalMatches" class="matches logo">
-            <div class="countContainer">
-                <img src="./images/match.svg" alt="match" class="match">
-                <p class="totalCounter">0</p>
-            </div>
+      <img src="./images/matches.svg" alt="totalMatches" class="matches logo">
+      <div class="countContainer">
+        <img src="./images/match.svg" alt="match" class="match">
+        <p class="totalCounter">0</p>
+      </div>
 
-        </section>
-        <section class="player side">
+    </section>
+    <section class="player side">
             
-            <img src="./images/person.svg" alt="person" class="profile logo">
-            <div class="countContainer">
-                <img src="./images/match.svg" alt="match" class="match">
-                <p class="playerCounter">0</p>
-            </div>
+      <img src="./images/person.svg" alt="person" class="profile logo">
+      <div class="countContainer">
+        <img src="./images/match.svg" alt="match" class="match">
+        <p class="playerCounter">0</p>
+      </div>
             
-        </section>
-        <section class="buttons">
-            
-            <button class="btn one">1 <img src="./images/match.svg" alt="match" class="btn match"> </button>
-            <button class="btn two">2 <img src="./images/match.svg" alt="match" class="btn match"> </button>
-            <button class="btn three">3 <img src="./images/match.svg" alt="match" class="btn match"> </button>
+    </section>
+    <section class="buttons">
+      <!-- 
+        Creation of buttons is implemented in 'optionsPopup.js'
+        Styles are added from main.css 
+      -->
+		</section>
+		
+	</div>
+
+  <div class="optionsPopupWrapper">
+    <div class="optionsPopup">
+      <h1 class="optionsTitle">Options</h1>
+      <form name="options" class="optionsForm">
         
+        <section class="optionsSection">
+          <label for="firstTurn" class="legend"> Player first: </label>
+          <input name="firstTurn" type="checkbox" class="optionsCheckbox" checked>
         </section>
+      
+        <section class="optionsSection">
+          <input value="25" class="optionsInput" type="text" name="amount" autocomplete="off" required>
+          <label for="name" class="optionsInputLabel">Amount</label>
+          <span class="optionsInputDescription">
+            Total number of matches
+          </span>
+        </section>
+        
+        <section class="optionsSection">
+          <input value="1" class="optionsInput" type="text" name="canTake" autocomplete="off" required>
+          <label for="name" class="optionsInputLabel">Max can take (2n + 1)</label>
+          <span class="canTakeAmount">Amount: <span class="canTakeAmountResult">3</span></span>
+          <span class="optionsInputDescription">
+            Maximum number of matches per turn (2n + 1)
+          </span>
+        </section>
+
+        <section class="optionsButtons">
+          <button class="optionsButton default">Default</button>
+          <button class="optionsButton submit">Done</button>
+        </section>
+      </form>
     </div>
-    
-    </body>
+  </div>
+
+</body>
 </html>
