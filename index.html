@@ -52,11 +52,10 @@
             
     </section>
     <section class="buttons">
-            
-      <button class="btn one">1 <img src="./images/match.svg" alt="match" class="btn match"> </button>
-      <button class="btn two">2 <img src="./images/match.svg" alt="match" class="btn match"> </button>
-      <button class="btn three">3 <img src="./images/match.svg" alt="match" class="btn match"> </button>
-        
+      <!-- 
+        Creation of buttons is implemented in 'optionsPopup.js'
+        Styles are added from main.css 
+      -->
 		</section>
 		
 	</div>
@@ -80,10 +79,11 @@
         </section>
         
         <section class="optionsSection">
-          <input value="3" class="optionsInput" type="text" name="canTake" autocomplete="off" required>
-          <label for="name" class="optionsInputLabel">Max can take</label>
+          <input value="1" class="optionsInput" type="text" name="canTake" autocomplete="off" required>
+          <label for="name" class="optionsInputLabel">Max can take (2n + 1)</label>
+          <span class="canTakeAmount">Amount: <span class="canTakeAmountResult">3</span></span>
           <span class="optionsInputDescription">
-            Maximum number of matches per turn
+            Maximum number of matches per turn (2n + 1)
           </span>
         </section>
 

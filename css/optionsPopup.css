@@ -111,6 +111,12 @@ label.legend {
   padding-top: 30px;
 }
 
+.canTakeAmount {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+}
+
 .optionsInput:focus {
   outline: none;
   box-shadow: none;

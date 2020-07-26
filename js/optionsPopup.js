@@ -4,6 +4,12 @@ let options = document.querySelector('.optionsPopupWrapper');
 let defaultButton = document.querySelector('button.optionsButton.default');
 let submitButton = document.querySelector('button.optionsButton.submit');
 
+let canTake = document.querySelector('.optionsInput[name="canTake"]'); 
+canTake.oninput = function() {
+  document.querySelector('span.canTakeAmountResult').innerHTML = (2 * (+canTake.value) + 1);
+}
+
+
 defaultButton.addEventListener('click', defaultStart);
 submitButton.addEventListener('click', modifiedStart);
 
@@ -23,8 +29,34 @@ function modifiedStart(event) {
   totalCounter = +amount.value;
   document.querySelector('.totalCounter').innerHTML = +amount.value;
 
-  let take = document.querySelector('.optionsInput[name="canTake"]');
-  max = +take.value;
+  max = (2 * (+canTake.value) + 1);
 
+  for(let i = 1; i <= max; i++) {
+    let button = document.createElement('button');
+    button.className = 'btn';
+    button.innerHTML = i;
+
+    button.onclick = function(event) {
+      event.preventDefault();
+      playerTakeMatch(i);
+    }
+
+    let img = document.createElement('img');
+    img.className = 'btn match';
+    img.setAttribute('src', './images/match.svg');
+    img.setAttribute('alt', 'match');
+
+    button.appendChild(img);
+
+    let container = document.querySelector('section.buttons');
+    container.append(button);
+  }
+
+  let firstTurn = document.querySelector('input.optionsCheckbox');
+  if (!firstTurn.checked) {
+    computerTakeMatch();
+  }
+  
+  
   options.style.display = 'none';
 }
