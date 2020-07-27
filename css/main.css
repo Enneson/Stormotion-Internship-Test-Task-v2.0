@@ -30,20 +30,21 @@ body {
     height: 100px;
 }
 
-.count-container__counter {
+.match-game__count-container {
     position: absolute;
     bottom: 0;
     right: -70px;
-    display: inline;
+    display: flex;
+    align-items: center;
     font-weight: 700;
     font-size: 25px;
 }
 
-.count-container__counter_total-counter {
+.match-game__count-container_total {
     right: -100px;
 }
 
-.count-container__counter_player-counter {
+.match-game__count-container_player {
     right: -50px;
 }
 
@@ -69,8 +70,8 @@ body {
 }
 
 .match-game__button {
-    outline: none;
+    /* outline: none;
     border-style: none;
-    background-color: transparent;
+    background-color: transparent; */
     cursor: pointer;
 }

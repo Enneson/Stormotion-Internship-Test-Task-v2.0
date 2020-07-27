@@ -60,7 +60,7 @@ function createButtons() {
 
     button.appendChild(img);
 
-    let container = document.querySelector('.options__section_buttons');
+    let container = document.querySelector('.match-game__section_buttons');
     container.append(button);
   }
 }
