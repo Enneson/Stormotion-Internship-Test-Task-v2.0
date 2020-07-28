@@ -11,8 +11,8 @@ let isEnded = false;
 
 computerCounter = computerPrimary;
 playerCounter = playerPrimary;
-document.querySelector('.count-container__counter_computer-counter').innerHTML = computerPrimary;
-document.querySelector('.count-container__counter_player-counter').innerHTML = playerPrimary;
+document.querySelector('#computer-counter').innerHTML = computerPrimary;
+document.querySelector('#player-counter').innerHTML = playerPrimary;
 
 function playerTakeMatch( playerValue ) {
     if( playerValue > totalCounter) {return};
@@ -26,8 +26,8 @@ function playerTakeMatch( playerValue ) {
 
     checkEndGame();
 
-    document.querySelector('.count-container__counter_total-counter').innerHTML = totalCounter;
-    document.querySelector('.count-container__counter_player-counter').innerHTML = playerCounter;
+    document.querySelector('#total-counter').innerHTML = totalCounter;
+    document.querySelector('#player-counter').innerHTML = playerCounter;
 }
 
 function computerTakeMatch() {
@@ -80,8 +80,8 @@ function computerTakeMatch() {
     computerCounter = computerCounter + computerValue;
     totalCounter = totalCounter - computerValue;
 
-    document.querySelector('.count-container__counter_total-counter').innerHTML = totalCounter;
-    document.querySelector('.count-container__counter_computer-counter').innerHTML = computerCounter;
+    document.querySelector('#total-counter').innerHTML = totalCounter;
+    document.querySelector('#computer-counter').innerHTML = computerCounter;
 };
 
 function checkEndGame() {

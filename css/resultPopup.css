@@ -19,7 +19,7 @@
     to {visibility: visible;} 
   }
 
-  .result-popup {
+  .result-popup__body {
     width: 400px;
     height: 100px;
     padding: 2%;
@@ -35,7 +35,7 @@
     position: relative;
   }
 
-  .result-popup::before { 
+  .result-popup__body::before { 
     content: 'Esc или клик закроют окно';
     position: absolute;
     top: 0;
