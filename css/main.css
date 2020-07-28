@@ -6,72 +6,73 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.match-game__wrapper {
+.game__wrapper {
     width: 80vw;
-    
+    height: 100vh;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
 }
 
-.match-game__section {
+.game__section {
     position: relative;
 }
 
-.match-game__section_middle {
+#total__section {
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.match__logo {
-    width: 100px;
-    height: 100px;
-}
-
-.match-game__count-container {
+.content-block__score-container {
     position: absolute;
     bottom: 0;
     right: -70px;
+}
+
+.score-block {
+    height: 30px;
     display: flex;
     align-items: center;
     font-weight: 700;
     font-size: 25px;
 }
 
-.match-game__count-container_total {
-    right: -100px;
+.score-block__counter {
+    display: inline;
+    margin: 0;
 }
 
-.match-game__count-container_player {
-    right: -50px;
-}
-
-.count-container__counter::before {
+.score-block__counter::before {
     content: 'x';
 }
 
-.match__logo {
-    
+.match-logo {   
     width: 30px;
     height: 30px;
 }
-
-.match-game__logo {
-    width: 160px;
-    height: 160px;
+ 
+.content-block__logo {
+    width: 150px;
+    height: 150px;
 }
 
-.match-game__section_buttons {
+.total-logo {
+    width: 170px;
+    height: 170px;
+}
+
+.game__section  .take-buttons {
     margin: 10px 0 30px 0;
     position: relative;
+}
+
+.take-buttons {
     display: flex;
 }
 
-.match-game__button {
-    /* outline: none;
-    border-style: none;
-    background-color: transparent; */
+.take-buttons__button {
+    background-color: transparent;
     cursor: pointer;
 }
