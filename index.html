@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   
-    <script defer src="./js/greetingPopup.js"></script>
-    <link rel="stylesheet" href="./css/greetingPopup.css">
+   <!--       Greeting Popup      OFFLINE            -->
+    <!-- <script defer src="./js/greetingPopup.js"></script>
+    <link rel="stylesheet" href="./css/greetingPopup.css"> -->
     
     <script defer src="./js/optionsPopup.js"></script>
     <link rel="stylesheet" href="./css/optionsPopup.css">
@@ -21,37 +21,38 @@
     <title>Stormotion internship test task v2</title>
 </head>
 <body>
-	<div class="match-game">
-	  <div class="match-game__wrapper">
+  
+  <div class="game  game__wrapper">
 		
-		<section class="match-game__section  match-game__section_computer">
+		<section class="game__section  content-block">
              
-      <img src="./images/pc.svg" alt="computer" class="match-game__logo  match-game__logo_profile">    
-      <div class="match-game__count-container  count-container  match-game__count-container_computer">
-        <img src="./images/match.svg" alt="match" class="count-container__logo match__logo">
-        <p class="count-container__counter  count-container__counter_computer-counter">0</p>
+      <img src="./images/pc.svg" alt="computer" class="content-block__logo" id="computer-logo">    
+      <div class="content-block__score-container  score-block">
+        <img src="./images/match.svg" alt="match" class="score-block__logo  match-logo">
+        <span id="computer-counter" class="score-block__counter">0</span>
       </div>
         
     </section>
-    <section class="match-game__section  match-game__section_middle">
+    <section class="game__section  content-block" id="total-section">
     
-      <img src="./images/matches.svg" alt="totalMatches" class="match-game__logo match-game__logo_matches">
-      <div class="match-game__count-container  count-container  match-game__count-container_total">
-        <img src="./images/match.svg" alt="match" class="count-container__logo match__logo">
-        <p class="count-container__counter  count-container__counter_total-counter">0</p>
+      <img src="./images/matches.svg" alt="totalMatches" class="content-block__logo" id="total-logo">
+      <div class="content-block__score-container  score-block">
+        <img src="./images/match.svg" alt="match" class="score-block__logo  match-logo">
+        <span id="total-counter" class="score-block__counter">0</span>
       </div>
 
     </section>
-    <section class="match-game__section match-game__section_player">
+    <section class="game__section  content-block">
             
-      <img src="./images/person.svg" alt="person" class="match-game__logo match-game__logo_profile">
-      <div class="match-game__count-container  count-container  match-game__count-container_player">
-        <img src="./images/match.svg" alt="match" class="count-container__logo match__logo">
-        <p class="count-container__counter  count-container__counter_player-counter">0</p>
+      <img src="./images/player.svg" alt="player" class="content-block__logo" id="player-logo">
+      <div class="content-block__score-container  score-block">
+        <img src="./images/match.svg" alt="match" class="score-block__logo  match-logo">
+        <span id="player-counter" class="score-block__counter">0</span>
       </div>
             
     </section>
-    <section class="match-game__section  match-game__section_buttons">
+
+    <section class="game__section  take-buttons HUITA">  
       <!-- 
         Creation of buttons is implemented in 'optionsPopup.js'
         Styles are added from main.css 
@@ -59,43 +60,42 @@
 		</section>
 		
 	  </div>
-  </div>
+  
 
-  <div class="options">
-    <div class="options__wrapper">
+    <div class="options options__wrapper">
     <div class="options__popup">
-      <h1 class="options_title">Options</h1>
-      <form name="options__form" class="options__form">
+      <h1 class="options__title">Options</h1>
+      <form name="options__form" class="options__form  form">
         
-        <section class="options__section">
-          <label for="first-turn" class="options__label_checkbox"> Player first: </label>
-          <input name="first-turn" type="checkbox" class="options__checkbox" checked>
+        <section class="form__section  switch-block">
+          <label for="first-turn" class="switch-block__label"> Player first: </label>
+          <input name="first-turn" type="checkbox" class="switch-block__checkbox" checked autofocus>
         </section>
       
-        <section class="options__section">
-          <input value="25" class="options__input" type="text" name="amount" autocomplete="off" required>
-          <label for="name" class="options__label_input">Amount</label>
-          <span class="options__description_input">
+        <section class="form__section   input-block">
+          <label for="matches-amount" class="input-block__label">Amount</label>
+          <input id="matches-amount" name="matches-amount" value="25" class="input-block__input" type="text" autocomplete="off" required>
+          <span class="input-block__description">
             Total number of matches
           </span>
         </section>
         
-        <section class="options__section">
-          <input value="1" class="options__input" type="text" name="canTake" autocomplete="off" required>
-          <label for="canTake" class="options__label_input">Max can take (2n + 1)</label>
-          <span class="options__can-take-amount">Amount: <span class="options__can-take-amount_result">3</span></span>
-          <span class="options__description_input">
+        <section class="form__section  input-block">
+          <label for="max-take" class="input-block__label">Max can take (2n + 1)</label>
+          <input id="max-take" name="max-take" value="1" class="input-block__input" type="text" autocomplete="off" required>
+          <span class="input-block__value-container">Amount: <span class="input-block__value">3</span></span>
+          <span class="input-block__description">
             Maximum number of matches per turn (2n + 1)
           </span>
         </section>
 
-        <section class="options__section  options__section_buttons">
-          <button class="options__section_button  options__section_button-default">Default</button>
-          <button class="options__section_button  options__section_button-submit">Done</button>
+        <section class="form__section  button-block">
+          <button id="options-default" class="button-block__button">Default</button>
+          <button id="options-submit" class="button-block__button">Done</button>
         </section>
       </form>
     </div>
     </div>
-  </div>
+  
 </body>
 </html>
