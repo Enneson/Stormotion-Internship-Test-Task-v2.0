@@ -150,8 +150,7 @@
   content: '*';
 }
 
-#matches-amount:focus, label.input-block__label,
-#max-take:valid, .input-block__label {
+.active {
   color: #B71C1C;
   top: -10px;
   padding-left: -5px;
