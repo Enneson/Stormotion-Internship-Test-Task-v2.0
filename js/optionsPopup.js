@@ -1,17 +1,16 @@
 let options = document.querySelector('.options__wrapper');
-let defaultButton = document.querySelector('#options-default');
-let submitButton = document.querySelector('#options-submit');
+let defaultButton = options.querySelector('#options-default');
+let submitButton = options.querySelector('#options-submit');
 
 let maxTake = document.querySelector('#max-take'); 
 maxTake.oninput = function() {
   document.querySelector('.input-block__value').innerHTML = (2 * (+maxTake.value) + 1);
 }
 
+let inputs = options.querySelectorAll('.input-block__input');
+let labels = options.querySelectorAll('.input-block__label');
 
-let inputs = document.querySelectorAll('.input-block__input');
-let labels = document.querySelectorAll('.input-block__label');
-
-for(input of inputs) {    
+for(let input of inputs) {    
   input.addEventListener('focus', swipeLabel);
   input.addEventListener('input', checkInput);
   input.addEventListener('blur', unswipeLabel);
@@ -23,31 +22,33 @@ function defaultLabel(input) {
   if(input.value != '') {
     for(label of labels) {
       if( label.getAttribute('for') == input.name) {
-        label.classList.add('active');
+        label.classList.add('default');
       }
     }  
   }
 }
 
 function swipeLabel(event) {
-  for(label of labels) {
-    if( label.getAttribute('for') == event.target.name) {
+  for(let label of labels) {
+    if( label.getAttribute('for') == event.target.name ) {
+      label.classList.remove('default');
       label.classList.add('active');
     }
   }
 }
 
 function unswipeLabel(event) {
-  if(event.target.value != '') { return false };
-
-  let activeLabel = document.querySelector('.input-block .active');
-  activeLabel.classList.toggle('active');
+  for(let label of labels) {
+    if( label.getAttribute('for') == event.target.name ) {
+      if( event.target.value != '') { return false };
+      label.classList.remove('active');
+    }
+  }
 }
 
 function checkInput(event) {
   event.target.value = event.target.value.replace(/[^\d]/g, '');
 }
-
 
 defaultButton.addEventListener('click', defaultStart);
 submitButton.addEventListener('click', modifiedStart);
