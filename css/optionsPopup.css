@@ -150,6 +150,13 @@
   content: '*';
 }
 
+.default {
+  color: #B71C1C;
+  top: -10px;
+  padding-left: -5px;
+  font-size: 14px;
+}
+
 .active {
   color: #B71C1C;
   top: -10px;
