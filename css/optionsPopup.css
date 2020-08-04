@@ -121,15 +121,21 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom: 1px solid #000;
+  padding-bottom: 1px;
   padding-left: 10px;
   padding-top: 30px;
+}
+
+.input-block__input:hover {
+  background-color: #f5f5f5;
 }
 
 .input-block__input:focus {
   outline: none;
   box-shadow: none;
-  background-color: #f5f5f5;
+  background-color:#adadad28;
   border-bottom: 2px solid #B71C1C;
+  padding-bottom: 0;
 }
 
 .input-block__value-container {
