@@ -105,16 +105,30 @@ function createSelectItem() {
   }
 }
 
+let select = document.querySelector('.select');
 let selectHeader = document.querySelectorAll('.select__header');
 let selectItem = document.querySelectorAll('.select__item');
-  
+let selectIcon = document.querySelector('.select__icon');
+
 selectHeader.forEach( item => {
   item.addEventListener('click', selectToggle);
 });
 
 function selectToggle() {
-  this.parentElement.classList.toggle('open');
+  let thisSelect = this.parentElement;
+  thisSelect.classList.toggle('open');
+  let icon = thisSelect.querySelector('.select__icon');
+  icon.classList.toggle('icon-open');
+
+  document.addEventListener('click', function(event) {
+    if( select.classList.contains('open') && !event.target.closest('.select__header') ){
+      select.classList.toggle('open');
+      selectIcon.classList.toggle('icon-open');
+    }
+  });
+
 }
+
 
 function selectChoose() {
   let thisText = this.innerText;
@@ -125,6 +139,7 @@ function selectChoose() {
   current.innerText = thisText;
   current.dataset.value = thisValue;
 
+  selectIcon.classList.toggle('icon-open');
   select.classList.toggle('open');
 }
 
