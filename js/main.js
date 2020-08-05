@@ -31,52 +31,13 @@ function playerTakeMatch( playerValue ) {
 }
 
 function computerTakeMatch() {
-    if( totalCounter == 0 ) { return };
-
-    let computerValue;
-
-    if ( totalCounter == 7  && playerCounter % 2 != 0 && computerCounter % 2 != 0) {
-
-        computerValue = 2;
-
-    } else if( totalCounter == 5 && playerCounter % 2 != 0 && computerCounter % 2 == 0 ) {
-          
-        computerValue = 1; 
     
-    } else if( totalCounter == 4 && playerCounter % 2 != 0 && computerCounter % 2 != 0) {
-        
-        computerValue = 2;
-    
-    } else if( totalCounter == 4 && computerCounter % 2 != 0 && playerCounter % 2 == 0) {
+    let computerValue = turnAlgorithm(totalCounter, playerCounter, computerCounter, max);
 
-        computerValue = 3;
+    //test
+    //console.log('totalCounter='+totalCounter+' playerCounter='+playerCounter+' computerCounter'+computerCounter+' totalEven='+totalEven+' playerEven='+playerEven+' computerEven='+computerEven);
+    //test
 
-    } else if( totalCounter == 3 && computerCounter %2 != 0) {
-        
-        computerValue = 3;
-     
-    } else if( totalCounter == 3 && computerCounter %2 == 0 ) {
-        
-        computerValue = 2;
-
-    } else if( totalCounter == 2 && computerCounter % 2 != 0 ) {
-
-        computerValue = 1;
-
-    } else if ( totalCounter == 2 && computerCounter % 2 == 0) {
-        
-        computerValue = 2;
-    
-    } else { //стандартный выбор случайного значения, если выше не оказалось подходящего условия
-        
-        computerValue = Math.floor(min + Math.random() * (max + min - 1));
-
-        if( computerValue > totalCounter ) {
-            max = totalCounter;
-            computerValue = Math.floor(min + Math.random() * (max + min - 1));  
-        }
-    };
-    
     computerCounter = computerCounter + computerValue;
     totalCounter = totalCounter - computerValue;
 
@@ -89,25 +50,24 @@ function checkEndGame() {
     endGame();
 }
 
-function endGame() {
-	
-	if (playerCounter % 2 == 0) {
+function endGame() {	
+  if (playerCounter % 2 == 0) {
 		
-		showResultPopup('win');
+	showResultPopup('win');
 
   } else if (computerCounter % 2 == 0) {
 		
-		showResultPopup('defeat');
+	showResultPopup('defeat');
 
   } else if (playerCounter % 2 == 0 && computerCounter % 2 == 0) {
 				
-		showResultPopup('draw');
+	showResultPopup('draw');
 
   } else if (playerCounter % 2 != 0 && computerCounter % 2 != 0) {
 				
-		showResultPopup('draw');
+	showResultPopup('draw');
 
   };
 
-    isEnded = true;
+  isEnded = true;
 }
