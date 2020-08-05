@@ -51,11 +51,11 @@ function checkEndGame() {
 }
 
 function endGame() {	
-  if (playerCounter % 2 == 0) {
+  if (playerCounter % 2 == 0 && computerCounter % 2 != 0) {
 		
 	showResultPopup('win');
 
-  } else if (computerCounter % 2 == 0) {
+  } else if (playerCounter % 2 != 0 && computerCounter % 2 == 0) {
 		
 	showResultPopup('defeat');
 
@@ -71,3 +71,4 @@ function endGame() {
 
   isEnded = true;
 }
+
